@@ -32,3 +32,6 @@ jobs:
       - name: Publish
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # the ~740 MB shard can sit in "syncing_files" past the 10-minute default
+          timeout: 1800000
